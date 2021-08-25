@@ -1,0 +1,30 @@
+{
+    "name": "yudiz/ordernotification",
+    "description": "Magento 2 New Order Notification Module",
+    "type": "magento2-module",
+    "require": {
+        "php": "7.0.2|7.0.4|~7.1.0|~7.1.3|~7.2.0|~7.3.0|~7.4.0",
+    },
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Yudiz Solutions Pvt. Ltd.",
+            "email": "support@yudiz.com",
+            "homepage": "https://www.yudiz.com/",
+            "role": "Magento Developer"
+        }
+    ],
+    "suggest": {
+    },
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": ["registration.php"],
+        "psr-4": {
+            "Yudiz\\Ordernotification\\": ""
+        }
+    },
+    "minimum-stability": "stable"
+}
