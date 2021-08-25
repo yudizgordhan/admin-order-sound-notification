@@ -1,5 +1,5 @@
 {
-    "name": "yudiz/ordernotification",
+    "name": "Yudiz/Ordernotification",
     "description": "Magento 2 New Order Notification Module",
     "type": "magento2-module",
     "require": {
