@@ -27,7 +27,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "yudiz\\ordernotification\\": ""
+            "Yudiz\\Ordernotification\\": ""
         }
     },
     "minimum-stability": "stable"
