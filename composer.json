@@ -1,5 +1,5 @@
 {
-    "name": "Yudiz/Ordernotification",
+    "name": "yudiz/ordernotification",
     "description": "Magento 2 New Order Notification Module",
     "type": "magento2-module",
     "require": {
@@ -27,7 +27,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Yudiz\\Ordernotification\\": ""
+            "yudiz\\ordernotification\\": ""
         }
     },
     "minimum-stability": "stable"
