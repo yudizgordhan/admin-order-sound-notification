@@ -1,16 +1,16 @@
 <?php
-namespace Ydz\Ordernotification\Block\Adminhtml;
+namespace Yudiz\Ordernotification\Block\Adminhtml;
 
 class OrderAlert extends \Magento\Framework\View\Element\Template
 {
     /**
-     * @var \Ydz\Ordernotification\Helper\Data
+     * @var \Yudiz\Ordernotification\Helper\Data
      */
     protected $dataHelper;
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        \Ydz\Ordernotification\Helper\Data $dataHelper
+        \Yudiz\Ordernotification\Helper\Data $dataHelper
     ) {
         $this->dataHelper = $dataHelper;
         parent::__construct($context);
