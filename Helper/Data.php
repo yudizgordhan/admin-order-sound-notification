@@ -1,4 +1,5 @@
 <?php
+
 namespace Yudiz\Ordernotification\Helper;
 
 /**
@@ -9,37 +10,16 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     /**
      * Section name for configs
      */
-    const SECTION_ID = 'ordernotification';
-    const DEALY_TIME = 15000; // mili second: 15 seconds
+    const SECTION_ID = 'ordernotification/';
+    const DELAY_TIME = 15000; // millisecond: 15 seconds
 
-    protected $_configSectionId = 'ordernotification';
 
-    /**
-     * Core registry
-     *
-     * @var \Magento\Framework\Registry
-     */
-    protected $_coreRegistry;
-
-    /**
-     * @param Context $context
-     * @param array $data
-     */
-    public function __construct(
-        \Magento\Framework\App\Helper\Context $context,
-        \Magento\Framework\Registry $registry
-    ) {
-        $this->_scopeConfig = $context->getScopeConfig();
-        $this->_configSectionId = self::SECTION_ID;
-        $this->_coreRegistry = $registry;
-        parent::__construct($context);
-    }
-
-    public function getConfig($configPath)
+    public function getConfig($configPath, $storeId = null)
     {
         return $this->scopeConfig->getValue(
-            $configPath,
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
+            self::SECTION_ID . $configPath,
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORES,
+            $storeId
         );
     }
 
@@ -48,25 +28,21 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function moduleEnabled(): bool
     {
-        return (bool) $this->getConfig($this->_configSectionId . '/general/enable');
+        return (bool)$this->getConfig('general/enable');
     }
 
     public function getAudioFile()
     {
-
-        return $this->getConfig($this->_configSectionId . '/general/audio_file_upload');
+        return $this->getConfig('general/audio_file_upload');
     }
 
     public function getSoundType()
     {
-
-        return $this->getConfig($this->_configSectionId . '/general/audio_type');
+        return $this->getConfig('general/audio_type');
     }
 
-    public function getDealy()
+    public function getDelay(): int
     {
-
-        return self::DEALY_TIME;
-        //return $this->getConfig($this->_configSectionId . '/general/audio_file_upload');
+        return (int) $this->getConfig('general/delay_time') ?? self::DELAY_TIME;
     }
 }

@@ -17,13 +17,9 @@ class OrderAlert extends \Magento\Framework\View\Element\Template
         parent::__construct($context);
     }
 
-    public function getEnable()
+    public function isEnabled()
     {
-        if (!$this->dataHelper->moduleEnabled()) {
-            return '';
-        }
-
-        return true;
+        return $this->dataHelper->moduleEnabled();
     }
 
     public function getSoundFile()
@@ -36,9 +32,9 @@ class OrderAlert extends \Magento\Framework\View\Element\Template
         return $this->dataHelper->getSoundType();
     }
 
-    public function getDealy()
+    public function getDelay() :int
     {
-        return $this->dataHelper->getDealy();
+        return $this->dataHelper->getDelay();
     }
 
     public function getMediaUrl()
