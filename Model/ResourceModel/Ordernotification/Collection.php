@@ -1,9 +1,8 @@
 <?php
 namespace Yudiz\Ordernotification\Model\ResourceModel\Ordernotification;
 
-use Yudiz\Ordernotification\Model\ResourceModel\AbstractCollection;
 
-class Collection extends AbstractCollection
+class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
     protected $_idFieldName = 'ordernotification_id';
 

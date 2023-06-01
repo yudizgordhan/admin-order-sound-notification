@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
-    <system>        
-        <tab id="newordernotification" translate="label" sortOrder="2001"><label>Order Notification</label></tab> 
+    <system>
+        <tab id="newordernotification" translate="label" sortOrder="2001"><label>Order Notification</label></tab>
         <section id="ordernotification" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Settings</label>
@@ -13,17 +13,22 @@
                     <label>Module Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="audio_type" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                <field id="delay_time" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Delay Time</label>
+                    <comment>Time in milli second (1 second = 1000 Milliseconds)</comment>
+                    <validate>validate-number</validate>
+                </field>
+                <field id="audio_type" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Sound Type</label>
                     <source_model>Yudiz\Ordernotification\Model\Config\Source\Soundtype</source_model>
                     <comment>Please select you want to play speech or play sound only.</comment>
                 </field>
-                <field id="audio_file_upload" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0" >
+                <field id="audio_file_upload" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="0" >
                     <label>Upload soud file</label>
                     <backend_model>Yudiz\Ordernotification\Model\Config\Backend\File\CustomFileType</backend_model>
                     <upload_dir config="system/sound" scope_info="1">order_sound</upload_dir>
                     <comment><![CDATA[Allowed file types: 'mp3', 'mp4', 'wav', 'wma', 'aac']]></comment>
-                </field>            
+                </field>
             </group>
         </section>
     </system>

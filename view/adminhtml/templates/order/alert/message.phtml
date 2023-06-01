@@ -1,13 +1,13 @@
 <?php
 /** @var \Yudiz\Ordernotification\Block\Adminhtml\OrderAlert $block */
-$enable = $block->getEnable();
+$isEnabled = $block->isEnabled();
 ?>
-<?php if ($enable): ?>
+<?php if ($isEnabled): ?>
     <?php
-    
+
     $audio_file = $block->getSoundFile();
     $mediaUrl = $block->getMediaUrl();
-    $dealy_time = $block->getDealy();
+    $delay_time = $block->getDelay();
     $sound_type = $block->getSoundType();
 
     if (!$sound_type) {
@@ -21,7 +21,7 @@ $enable = $block->getEnable();
     } else {
         $sound = $mediaUrl.$audio_file;
     }
-    
+
     ?>
     <audio id="playOrderAudio">
         <source src="<?= $block->escapeHtml($sound); ?>" type="audio/mpeg">
@@ -33,14 +33,14 @@ $enable = $block->getEnable();
             'jquery',
             'jquery/ui'
         ], function ($) {
-            var dealy_time = "<?= $block->escapeHtml($dealy_time); ?>";
-            var sound_play = "<?= $block->escapeHtml($sound_play); ?>";
+            var delay_time = <?= $block->escapeHtml($delay_time); ?>,
+                sound_play = "<?= $block->escapeHtml($sound_play); ?>";
             $(document).ready(function(){
                 checkNewOrder();
             });
 
             function checkNewOrder(){
-                var ajaxRequest;
+                let ajaxRequest;
                 ajaxRequest = $.ajax({
                     url: "<?= $block->escapeUrl($block->getUrl('ordernotification/alert/ordercreate')); ?>",
                     type: 'GET',
@@ -63,7 +63,7 @@ $enable = $block->getEnable();
                         }else{
                             playAudio();
                         }
-                        
+
                     }
                 });
                 //On failure of request this function will be called
@@ -73,16 +73,16 @@ $enable = $block->getEnable();
                     // $('#loader').hide();
                 });
 
-                setTimeout(function(){ checkNewOrder() }, dealy_time);
+                setTimeout(function(){ checkNewOrder() }, delay_time);
             }
 
             function playAudio() {
-                var x = document.getElementById("playOrderAudio"); 
+                var x = document.getElementById("playOrderAudio");
                 document.getElementById('playOrderAudio').muted = false;
                 document.getElementById("playOrderAudio").play();
             }
             function playSpeech(speech_text = '') {
-                
+
                 let speech = new SpeechSynthesisUtterance();
                     speech.lang = "en";
 
@@ -98,8 +98,7 @@ $enable = $block->getEnable();
                     speech.voice = voices[33];
                 speech.text = speech_text;
                 window.speechSynthesis.speak(speech);
-                console.log(speech);
-            } 
+            }
         });
     </script>
 <?php endif; ?>
