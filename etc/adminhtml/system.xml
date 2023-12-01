@@ -34,10 +34,10 @@
                     <comment>Please select you want to play speech or play sound only.</comment>
                 </field>
                 <field id="audio_file_upload" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0" >
-                    <label>Upload soud file</label>
+                    <label>Upload sound file</label>
                     <backend_model>Yudiz\Ordernotification\Model\Config\Backend\File\CustomFileType</backend_model>
                     <upload_dir config="system/sound" scope_info="1">order_sound</upload_dir>
-                    <comment><![CDATA[Allowed file types: 'mp3', 'mp4', 'wav', 'wma', 'aac']]></comment>
+                    <comment><![CDATA[Allowed file types: 'mp3', 'mp4', 'wav', 'wma', 'aac' . Contains default Audio  you can put it optional]]></comment>
                 </field>        
             </group>
         </section>
