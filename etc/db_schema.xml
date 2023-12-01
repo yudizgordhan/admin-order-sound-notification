@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Yudiz
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Yudiz
+ * @package     Yudiz_Ordernotification
+ * @copyright   Copyright (c) 2023 Yudiz (https://www.Yudiz.com/)
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="yudiz_ordernotification" resource="default" engine="innodb" comment="Yudiz Order Notification Table">
+        <column xsi:type="int" name="ordernotification_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+        <column xsi:type="text" name="order_id" nullable="true" length="255" comment="Last Order Id"/>
+        <column xsi:type="text" name="created_time" nullable="true" comment="Created Time"/>
+        <column xsi:type="text" name="user_id" nullable="false" length="255" comment="Notified user id"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="ordernotification_id"/>
+        </constraint>
+    </table>
+</schema>

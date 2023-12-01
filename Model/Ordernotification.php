@@ -1,4 +1,18 @@
 <?php
+
+/**
+ * Yudiz
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Yudiz
+ * @package     Yudiz_Ordernotification
+ * @copyright   Copyright (c) 2023 Yudiz (https://www.Yudiz.com/)
+ */
+
 namespace Yudiz\Ordernotification\Model;
 
 class Ordernotification extends \Magento\Framework\Model\AbstractModel
@@ -6,13 +20,13 @@ class Ordernotification extends \Magento\Framework\Model\AbstractModel
     /**
      * Statuses
      */
-    const STATUS_ENABLED = 1;
-    const STATUS_DISABLED = 0;
+    public const STATUS_ENABLED = 1;
+    public const STATUS_DISABLED = 0;
 
     /**
      * Test cache tag
      */
-    const CACHE_TAG = 'order_notificationy';
+    public const CACHE_TAG = 'order_notificationy';
 
     /**
      * @var string
@@ -27,6 +41,8 @@ class Ordernotification extends \Magento\Framework\Model\AbstractModel
     protected $_eventPrefix = 'order_notificationy';
 
     /**
+     * Initialize resource model
+     *
      * @return void
      */
     protected function _construct()
