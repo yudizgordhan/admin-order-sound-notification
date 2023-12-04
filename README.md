@@ -76,7 +76,9 @@ Login to the **Magento Admin**, navigate to `Yudiz -> Configure OrderNotificatio
 
 <div>
     <img src="./ReadmeImages/Yudiz_Ordernotification.png" alt="Yudiz_OrderNotification">
-</div><br/>
+</div>
+
+</br>
 
 - Module Enable:  Select `Yes` to activate the module and No to disable it.
 - Sound Type: Select SoundType either you want to play sound or play speech.
