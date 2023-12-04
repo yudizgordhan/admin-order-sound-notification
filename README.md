@@ -1,4 +1,4 @@
-# OrderNotification Extension for Magento 2
+# Admin OrderNotification Extension for Magento 2
 The Magento 2 OrderNotification module enables the Admin to receive notifications through sound whenever a new order is placed.
 
 ## Installation
@@ -76,15 +76,15 @@ Login to the **Magento Admin**, navigate to `Yudiz -> Configure OrderNotificatio
 
 <div>
     <img src="./ReadmeImages/Yudiz_Ordernotification.png" alt="Yudiz_OrderNotification">
-</div>
-
-</br>
+</div><br/>
 
 - Module Enable:  Select `Yes` to activate the module and No to disable it.
 - Sound Type: Select SoundType either you want to play sound or play speech.
 - Upload Sound Type: Upload the audio file that you wish to hear when a new order occurs. This feature is optional as default values are also available.
 
-After saving these settings, when a new order occurs, you will be able to hear the order notification sound. 
+After saving these settings, when a new order occurs, you will be able to hear the order notification sound at Admin Panel. 
+
+<video src="ReadmeImages/Order%20Alert%20Sound.mp4" controls autoplay title="Order Notification"></video>
 
 #### However, it is necessary to refresh the admin panel once and remain in the admin panel tab to receive the notification.
 
