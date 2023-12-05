@@ -84,10 +84,9 @@ Login to the **Magento Admin**, navigate to `Yudiz -> Configure OrderNotificatio
 
 After saving these settings, when a new order occurs, you will be able to hear the order notification sound at Admin Panel. 
 
-<video src="./ReadmeImages/Order_Alert_Sound.mp4" controls title="Order Notification"></video>
-
 #### However, it is necessary to refresh the admin panel once and remain in the admin panel tab to receive the notification.
 
+https://github.com/yudizgordhan/admin-order-sound-notification/assets/130353709/6aa00201-ca7e-45ea-b842-5db384fcd67e
 
 
 
