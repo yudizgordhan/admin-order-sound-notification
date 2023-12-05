@@ -70,8 +70,6 @@ By following these 2 Ways you can easily obtain and install the module.  For det
 
 ## Magento 2 OrderNotification User Guide (ADMIN)
 
-This guide provides step-by-step instructions on how to integrate a banner slider into the homepage of your Magento 2 store.
-
 Login to the **Magento Admin**, navigate to `Yudiz -> Configure OrderNotification `.
 
 <div>
